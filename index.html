@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="center bg-dark">
+        <nav class="title">
+            <a class="navbar-brand" href="#">Weather dashboard</a>
+        </nav>
+    </div>
+
+    <!-- start container -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- first colomn  -->
+            <div class="col-lg-3">
+
+                <nav class="navbar navbar-light bg-light">
+                    <h3>Search for a city</h3>
+                    <form class="form-inline">
+                        <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button id="searchBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </nav>
+
+                <div class="card">
+                    <ul class="list-group list">
+
+                    </ul>
+                </div>
+
+
+            </div>
+            <!-- second-colomn -->
+            <div class="col-lg-9">
+                <div id="currentCity" class="container"></div>
+                <div class="row">
+                    
+                   <h3 id="forcasth3" class="hide"></h3>
+                    <div id="forecast" class="row">
+                        
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end container -->
+
+
+<script src="script.js"></script>
+</body>
+
+</html>

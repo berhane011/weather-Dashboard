@@ -1,0 +1,26 @@
+.center{
+    background-color: dark;
+    text-align: center;
+    padding: .5rem;
+    margin: 2rem;
+    border-radius: .5rem;
+   
+}
+.navbar-brand{
+    font-size: 3rem;
+    color: white;
+}
+.search{
+    padding: 2rem;
+    border-width: 2rem;
+ 
+}
+#forcasth3{
+    display: block;
+}
+.cardss{
+    margin: 3rem;
+   
+    padding-right: .5rem;
+    
+}
