@@ -2,7 +2,7 @@
 
  var date = new Date();
 
-$("#searchBtn").on("click",function hello(){
+$("#searchBtn").on("click",function(){
     event.preventDefault();
     var city = $("#searchInput").val();
   
@@ -22,7 +22,7 @@ $.ajax({
     getCurrentForecast();
     makeList(city);
     ultravilut(response.coord.lat, response.coord.lon)
-    set()
+
     })
 
 })
@@ -36,7 +36,7 @@ function makeList(city){
 function getCurrentWeather(response){
     var tempF = Math.floor((response.main.temp - 273.15) * 1.80 + 32);
     $("#currentCity").empty();
-
+ 
     var card = $("<div>")
      card.addClass("cardss")
     var cardBody = $("<div>").addClass("cardBody")
@@ -53,9 +53,7 @@ function getCurrentWeather(response){
      card.append(cardBody);
      $("#currentCity").append(card)
 
-     $(".cityName").on("click",function(){
-        hello()
-     })
+     
 
 }
 
@@ -74,27 +72,28 @@ function getCurrentForecast(){
          
     $('#forecast').empty();
     $("#forcasth3").empty();
-    var ford = $("<h3>").text("Forecast Weather")
-    $("#forcasth3").append(ford)
+    var forecast = $("<h3>").text("Forecast Weather")
+    $("#forcasth3").append(forecast)
         
        
     
     for (var i = 0; i < results.length; i++) {
 
-        var day = Number(results[i].dt_txt.split('-')[2].split(' ')[0]);
+        var day = (results[i].dt_txt.split(' ')[0]);
         var hour = results[i].dt_txt.split('-')[2].split(' ')[1];
-        // console.log(day);
-        // console.log(hour);
+        console.log(day);
+        console.log(hour);
+        console.log(results[i].dt_txt.indexOf("12:00:00"))
   
         if(results[i].dt_txt.indexOf("12:00:00") !== -1){
           
           // get the temperature and convert to fahrenheit 
     var temp = (results[i].main.temp - 273.15) * 1.80 + 32;
     var tempF = Math.floor(temp);
-         
+        
           var card = $("<div>").addClass("card col-md-2 ml-4 bg-primary text-white");
           var cardBody = $("<div>").addClass("card-body p-3 forecastBody")
-          var cityDate = $("<h4>").addClass("card-title").text(date.toLocaleDateString('en-US'));
+          var cityDate = $("<h4>").addClass("card-title").text(day);
           var temperature = $("<p>").addClass("card-text forecastTemp").text("Temperature: " + tempF + " °F");
           var humidity = $("<p>").addClass("card-text forecastHumidity").text("Humidity: " + results[i].main.humidity + "%");
   
